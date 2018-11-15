@@ -4,7 +4,7 @@
 const mongoose = require("mongoose");
 
 /**
- * Make the connection with database
+ * Making connection with database
  */
 mongoose.Promise = global.Promise;
 mongoose.connect(

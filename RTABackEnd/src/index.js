@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
  * We're gonna use this app in all of our application
  */
 require("./controllers/authControllers")(app);
+require("./controllers/projectControllers")(app);
 
 /**
  * Default port
