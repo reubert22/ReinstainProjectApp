@@ -1,10 +1,7 @@
-const mongoose = require("../database");
-
+const mongoose = require("../../database");
 const bcrypt = require("bcryptjs");
 
-/**
- * Our user schema
- */
+// Const used to make our User Schema
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -16,20 +13,31 @@ const UserSchema = new mongoose.Schema({
     required: true,
     lowercase: true
   },
+  passwordResetToken: {
+    type: String,
+    // Attribute to security
+    select: false
+  },
+  passwordResetExpires: {
+    type: Date,
+    // Attribute to security
+    select: false
+  },
   password: {
     type: String,
     required: true,
-    select: false // attrib to security
+    // Attribute to security
+    select: false
   },
   createdAt: {
     type: String,
-    default: Date.now
+    default: new Date()
   }
 });
 
 /**
- * Transform the password in hash to persist
- * in database, that runs before save.
+ * Function transform the password in hash to
+ * persist in database, that runs before save.
  */
 UserSchema.pre("save", async function(next) {
   const hash = await bcrypt.hash(this.password, 5);
@@ -38,9 +46,7 @@ UserSchema.pre("save", async function(next) {
   next();
 });
 
-/**
- * Defining our model
- */
+// Const used to define our Schema
 const User = mongoose.model("User", UserSchema);
 
 module.exports = User;

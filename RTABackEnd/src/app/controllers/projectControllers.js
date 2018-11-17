@@ -1,6 +1,7 @@
 const express = require("express");
 const authMiddleware = require("../middlewares/auth");
 
+// Const used to define our routes
 const router = express.Router();
 
 /**
@@ -17,7 +18,7 @@ router.use(authMiddleware);
  * redirect after authentication succeed
  */
 router.get("/", (req, res) => {
-  res.send({ ok: true });
+  res.send({ ok: true, user: req.userId });
 });
 
 module.exports = app => app.use("/projects", router);

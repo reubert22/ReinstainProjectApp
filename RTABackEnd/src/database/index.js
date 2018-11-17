@@ -1,10 +1,8 @@
-/**
- * To connect on database
- */
+// Const used to connect on database
 const mongoose = require("mongoose");
 
 /**
- * Making connection with database
+ * Function to make connection with database
  */
 mongoose.Promise = global.Promise;
 mongoose.connect(
