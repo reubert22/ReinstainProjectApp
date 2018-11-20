@@ -1,6 +1,8 @@
 const express = require("express");
 const authMiddleware = require("../middlewares/auth");
 
+const Project = require("../models/projects");
+const Task = require("../models/task");
 // Const used to define our routes
 const router = express.Router();
 
@@ -17,8 +19,24 @@ router.use(authMiddleware);
  * Here is where the route we're gonna
  * redirect after authentication succeed
  */
-router.get("/", (req, res) => {
-  res.send({ ok: true, user: req.userId });
+router.get("/", async (req, res) => {
+  res.send({ user: req.userId });
+});
+
+router.get("/:projectId", async (req, res) => {
+  res.send({ user: req.userId });
+});
+
+router.post("/", async (req, res) => {
+  res.send({ user: req.userId });
+});
+
+router.put("/:projectId", async (req, res) => {
+  res.send({ user: req.userId });
+});
+
+router.delete("/:projectId", async (req, res) => {
+  res.send({ user: req.userId });
 });
 
 module.exports = app => app.use("/projects", router);
