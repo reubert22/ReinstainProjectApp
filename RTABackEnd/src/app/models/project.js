@@ -22,8 +22,8 @@ const ProjectSchema = new mongoose.Schema({
     }
   ],
   createdAt: {
-    type: String,
-    default: new Date()
+    type: Date,
+    default: Date.now
   }
 });
 
