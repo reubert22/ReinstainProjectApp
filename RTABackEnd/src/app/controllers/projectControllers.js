@@ -164,4 +164,16 @@ router.delete("/:projectId", async (req, res) => {
   }
 });
 
+/* router.get("/list", async (req, res) => {
+  try {
+
+    const projects = await Project.find()
+
+    return res.send({ projects });
+  } catch (err) {
+    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>', err)
+    return res.status(400).send({ error: "Error on list projects of user" })
+  }
+}); */
+
 module.exports = app => app.use("/projects", router);

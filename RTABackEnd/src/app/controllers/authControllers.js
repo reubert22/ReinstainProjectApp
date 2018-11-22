@@ -37,6 +37,18 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.get("/list_all", async (req, res) => {
+  try {
+    const user = await User.find();
+
+    // Here is where we return that everything is okay
+    return res.send({ user });
+  } catch (err) {
+    // In case of something wrong at register route
+    return res.status(400).send({ error: "Registration failed" });
+  }
+});
+
 /**
  * Function to authenticate an user.
  * Endpoint - /auth/authenticate
