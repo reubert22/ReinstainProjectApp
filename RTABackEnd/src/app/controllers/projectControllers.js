@@ -38,9 +38,9 @@ router.get("/", async (req, res) => {
  * Router to list one project on database
  * based on projectId that we're passing
  * as param
- * Endpoint - /projects/:projectId
+ * Endpoint - /projects/list/project/:projectId
  */
-router.get("/:projectId", async (req, res) => {
+router.get("/list/project/:projectId", async (req, res) => {
   try {
     // const to keep our object
     // Passing projectId and populating it with attributes
@@ -105,9 +105,9 @@ router.post("/", async (req, res) => {
 
 /**
  * Router to update an project already created
- * Endpoint - /projects/:projectId
+ * Endpoint - /projects/list/project/:projectId
  */
-router.put("/:projectId", async (req, res) => {
+router.put("/list/project/:projectId", async (req, res) => {
   try {
     const { title, description, tasks } = req.body;
 
@@ -150,9 +150,9 @@ router.put("/:projectId", async (req, res) => {
 
 /**
  * Router to delete an project
- * Endpoint - /projects/:projectId
+ * Endpoint - /projects/list/project/:projectId
  */
-router.delete("/:projectId", async (req, res) => {
+router.delete("/list/project/:projectId", async (req, res) => {
   try {
     // Finding the project based on  
     // project id that was passed 
@@ -164,16 +164,25 @@ router.delete("/:projectId", async (req, res) => {
   }
 });
 
-/* router.get("/list", async (req, res) => {
+/**
+ * Router to get projects based on user id
+ * Endpoint - /projects/list/user/:userId
+ */
+router.get("/list/user/:userId", async (req, res) => {
   try {
+    const projects = await Project.find();
 
-    const projects = await Project.find()
+    const projectsOfUser = [];
+    projects.map(project => {
+      if (project.user._id == req.params.userId) {
+        projectsOfUser.push(project);
+      }
+    })
 
-    return res.send({ projects });
+    return res.send({ projectsOfUser });
   } catch (err) {
-    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>', err)
     return res.status(400).send({ error: "Error on list projects of user" })
   }
-}); */
+});
 
 module.exports = app => app.use("/projects", router);
