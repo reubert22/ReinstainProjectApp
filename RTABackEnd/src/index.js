@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
+const allowCors = require('../src/config/cors')
 
 /**
  * To understand request to our API in json format
@@ -14,6 +15,8 @@ app.use(bodyParser.json());
  * bodyParser.urlencoded
  */
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(allowCors);
 
 /**
  * We're gonna use this app in all of our application
