@@ -1,0 +1,95 @@
+.container-login {
+  height: 100vh;
+  background-color: #42bf99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-box-center {
+  height: 60%;
+  width: 35%;
+  background-color: #2d2e30;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.container-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container-logo {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.txt-logo {
+  margin: 0 20px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-family: 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', 'Roboto', 'Ebrima',
+    'Nirmala UI', 'Gadugi', 'Segoe Xbox Symbol', 'Segoe UI Symbol', 'Meiryo UI',
+    'Khmer UI', 'Tunga', 'Lao UI', 'Raavi', 'Iskoola Pota', 'Latha',
+    'Leelawadee', 'Microsoft YaHei UI', 'Microsoft JhengHei UI', 'Malgun Gothic',
+    'Estrangelo Edessa', 'Microsoft Himalaya', 'Microsoft New Tai Lue',
+    'Microsoft PhagsPa', 'Microsoft Tai Le', 'Microsoft Yi Baiti',
+    'Mongolian Baiti', 'MV Boli', 'Myanmar Text', 'Cambria Math';
+}
+
+.container-form {
+  height: 50px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.login-input-email {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #42bf99;
+  width: 90%;
+  height: 30px;
+}
+
+.login-input-email::placeholder {
+  color: #fff;
+}
+
+.container-button {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.next-btn {
+  background-color: #42bf99;
+  border: 0;
+  height: 30px;
+  width: 100px;
+  margin: 0 20px;
+}
+
+.txt-next-btn {
+  color: #fff;
+  font-size: 15px;
+  font-style: italic;
+  font-family: 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', 'Roboto', 'Ebrima',
+    'Nirmala UI', 'Gadugi', 'Segoe Xbox Symbol', 'Segoe UI Symbol', 'Meiryo UI',
+    'Khmer UI', 'Tunga', 'Lao UI', 'Raavi', 'Iskoola Pota', 'Latha',
+    'Leelawadee', 'Microsoft YaHei UI', 'Microsoft JhengHei UI', 'Malgun Gothic',
+    'Estrangelo Edessa', 'Microsoft Himalaya', 'Microsoft New Tai Lue',
+    'Microsoft PhagsPa', 'Microsoft Tai Le', 'Microsoft Yi Baiti',
+    'Mongolian Baiti', 'MV Boli', 'Myanmar Text', 'Cambria Math';
+}
