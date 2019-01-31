@@ -4,12 +4,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('https://i.imgur.com/yVkowLk.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container-box-center {
-  height: 60%;
-  width: 35%;
-  background-color: #2d2e30;
+  height: 50%;
+  width: 30%;
+  background-color: rgba(45, 46, 48, 0.5);
   border-radius: 5px;
   padding: 40px;
 }
@@ -56,9 +59,24 @@
 .login-input-email {
   background-color: transparent;
   border: 0;
-  border-bottom: 1px solid #42bf99;
+  border-bottom: 1px solid #fff;
   width: 90%;
   height: 30px;
+  color: #fff;
+}
+
+.login-input-email:hover {
+  border-bottom: 1px solid #48a589;
+}
+
+.login-input-email:active {
+  border-bottom: 1px solid #48a589;
+  outline: none;
+}
+
+.login-input-email:focus {
+  border-bottom: 1px solid #48a589;
+  outline: none;
 }
 
 .login-input-email::placeholder {
@@ -79,6 +97,10 @@
   height: 30px;
   width: 100px;
   margin: 0 20px;
+}
+
+.next-btn:hover {
+  background-color: #48a589;
 }
 
 .txt-next-btn {

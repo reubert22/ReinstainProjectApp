@@ -3,7 +3,20 @@ import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import './style.css';
 
 class Login extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: ''
+    };
+  }
+
+  handleInput = e => {
+    this.setState({ email: e.target.value });
+  };
+
   render() {
+    const { email } = this.state;
     return (
       <div className="container-login">
         <div className="container-box-center">
@@ -17,14 +30,15 @@ class Login extends PureComponent {
                   className="login-input-email"
                   type="text"
                   name="firstname"
-                  value=""
-                  placeholder="Email"
+                  value={email}
+                  onChange={this.handleInput}
+                  placeholder="Email or username"
                 />
               </form>
             </div>
             <div className="container-button">
               <button className="next-btn" type="button">
-                <span className="txt-next-btn">Próximo</span>
+                <span className="txt-next-btn">Next</span>
               </button>
             </div>
           </div>
