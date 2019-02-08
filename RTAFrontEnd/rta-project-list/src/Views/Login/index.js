@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
+
 import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import './style.css';
 
@@ -37,9 +39,11 @@ class Login extends PureComponent {
               </form>
             </div>
             <div className="container-button">
-              <button className="next-btn" type="button">
-                <span className="txt-next-btn">Next</span>
-              </button>
+              <Link to="/Home">
+                <button className="next-btn" type="button">
+                  <span className="txt-next-btn">Next</span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
